@@ -23,18 +23,16 @@ int main(int argc, char** argv) { //TODO: Should be able to run on INFINITELY ma
 
     /* handle file */
 
-    // int count = 0;
-    // char** my_lines = process_file(argv[1], &count);
-    //
-    // for (int i = 0; i < count; i++) {
-    //     printf("line %d: %s\n", i+1, my_lines[i]);
-    //     free(my_lines[i]);
-    // }
-    // free(my_lines);
+    int count = 0;
+    char** my_lines = process_file(argv[1], &count);
+
+    for (int i = 0; i < count; i++) {
+        printf("line %d: %s\n", i+1, my_lines[i]);
+        free(my_lines[i]);
+    }
+    free(my_lines);
 
     /* end of handling a file */
-
-    expand_macros(NULL);
 
     return 0;
 }
