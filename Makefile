@@ -1,6 +1,6 @@
 TARGET    := assembler
 CC        := gcc
-CFLAGS    := -Wall -ansi -pedantic -MMD -MP -I./include
+CFLAGS    := -MMD -MP -I./include # -Wall -ansi -pedantic
 
 BUILD_DIR := ./build
 SRC_DIR   := ./src
@@ -16,7 +16,7 @@ DEPS = $(OBJS:.o=.d)
 all: $(TARGET)
 
 run: all
-	./$(TARGET)
+	./$(TARGET) inputs/test1.as
 
 clean:
 	rm -rf $(TARGET) $(BUILD_DIR)
