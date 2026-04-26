@@ -6,7 +6,7 @@
 
 
 void expand_macros(char** lines) {
-    HashMap map;
+    HashMap map = {0, 0, NULL};
 
     set_value(&map, "nigga", "bigga");
     printf("yay %s", get_value(&map, "nigga"));
